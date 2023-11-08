@@ -1,24 +1,33 @@
-import logo from './logo.svg';
+
 import './App.css';
+import { About } from './Components/About/About';
 
 function App() {
+  //Js vanilla
+  const nombre = "Pedro"
+
+  const persona={
+    name:'Brandon',
+    lastname:'Stark',
+    age:20,
+    likecss:false,
+    likewarg:true,
+    img:'https://picsum.photos/id/91/200' 
+  }
+  
+  function clickeo(){
+    console.log(`Usted ${nombre}, hizo click.`)
+  }
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    //jsx
+    <main>  
+        <h2> Bienvenido {nombre}, buen día.</h2>
+        <button onClick={clickeo}> Click me </button>
+        <button onClick={()=>console.log(`Usted ${nombre}, hizo click en el otro botón.`)}> Click me 2 </button>
+        <About persona={persona}/>
+    </main>
   );
 }
 
